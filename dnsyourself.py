@@ -36,19 +36,18 @@ dnsFile.close()
 print("Created dns file 'domain.to.serve'")
 
 ### generate coredns file
-core = """
-.:53 {
+core = """.:53 {{
     forward . 8.8.8.8 1.1.1.1
     errors
     health
-}
+}}
 
-{domain}.:53 {
+{domain}.:53 {{
     log
     errors
     health
     file domain.to.serve
-}
+}}
 """.format(domain=domain)
 
 dnsFile = open('Corefile', 'w', newline='')
