@@ -50,9 +50,9 @@ core = """.:53 {{
 }}
 """.format(domain=domain)
 
-dnsFile = open('Corefile', 'w', newline='')
-dnsFile.write(dns)
-dnsFile.close()
+coreFile = open('Corefile', 'w', newline='')
+coreFile.write(core)
+coreFile.close()
 print("Created Corefile")
 
 ### prompt user to run the script
